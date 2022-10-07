@@ -1,0 +1,263 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap");
+
+:root {
+    --kit-color-primary: #4154ff;
+    --kit-font-family: -apple-system,
+        blinkmacsystemfont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+    --muted-text-color: #777;
+    --tinted-blue-background-color: #f8f8fb;
+    --tinted-green-background-color: #f7fdfe;
+    --light-green-background-color: rgba(102, 222, 189, 0.15);
+    --dark-blue-color: #0d0c46;
+    --green-color: #1fccbb;
+    --text-color: black;
+    --primary-color: #4154ff;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: white;
+    background-attachment: fixed;
+    background-size: 300px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: "Public Sans", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media ( max-width: 767px ) {
+        font-size: 14px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    > .Content {
+        min-width: 320px;
+        min-height: 100vh;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @media (max-width: 1279px) {
+        padding: 0 28px;
+    }
+}
+
+.card,
+.ant-card {
+    $shadowDepth: 0.03;
+    margin-bottom: 1rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 4px hsla(0, 0%, 0%, $shadowDepth),
+        0 2px 2px hsla(0, 0%, 0%, $shadowDepth),
+        0 4px 4px hsla(0, 0%, 0%, $shadowDepth),
+        0 8px 8px hsla(0, 0%, 0%, $shadowDepth);
+    user-select: none;
+
+    &.clickable {
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+
+        &:hover {
+            $shadowDepth: 0.05;
+            box-shadow: 0 0 4px hsla(0, 0%, 0%, $shadowDepth),
+                0 2px 2px hsla(0, 0%, 0%, $shadowDepth),
+                0 4px 4px hsla(0, 0%, 0%, $shadowDepth),
+                0 8px 8px hsla(0, 0%, 0%, $shadowDepth),
+                0 16px 16px hsla(0, 0%, 0%, $shadowDepth);
+        }
+    }
+
+    &-body {
+        padding: 1rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: 2.25em;
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    color: var(--muted-text-color);
+    font-weight: 500;
+    font-size: 0.85em;
+    line-height: inherit;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.text {
+    &-muted {
+        color: var(--muted-text-color) !important;
+    }
+
+    &-faint {
+        color: rgba(black, 0.2) !important;
+    }
+
+    &-spaced {
+        letter-spacing: 0.05em !important;
+    }
+
+    &-gold {
+        color: #ffba03 !important;
+    }
+
+    &-green {
+        color: var(--green-color) !important;
+    }
+
+    &-white {
+        color: white !important;
+    }
+
+    &-small {
+        font-size: 0.85em !important;
+    }
+
+    &-large {
+        font-size: 1.15em !important;
+    }
+
+    &-center {
+        text-align: center !important;
+    }
+
+    &-bold {
+        font-weight: bold !important;
+    }
+
+    &-medium {
+        font-weight: 500 !important;
+    }
+}
+
+.bg {
+    &-white {
+        background-color: white !important;
+    }
+
+    &-dark {
+        background-color: #0d403c !important;
+    }
+
+    &-light {
+        background-color: var(--tinted-blue-background-color) !important;
+    }
+
+    &-green {
+        background-color: var(--tinted-green-background-color) !important;
+    }
+}
+
+.overflow-ellipsis {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.mid-blue {
+    color: #868aa5;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #868aa5;
+}
